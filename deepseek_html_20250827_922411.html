@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本地网页开发环境</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --dark-color: #2c3e50;
+            --light-color: #ecf0f1;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: var(--light-color);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: var(--shadow);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .hero {
+            padding: 4rem 0;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .section {
+            padding: 3rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--dark-color);
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .tool-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .tool-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .code-editor {
+            background: var(--dark-color);
+            color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            overflow-x: auto;
+        }
+        
+        .code-editor pre {
+            font-family: 'Courier New', monospace;
+        }
+        
+        .comment {
+            color: #95a5a6;
+        }
+        
+        .selector {
+            color: var(--secondary-color);
+        }
+        
+        .property {
+            color: var(--primary-color);
+        }
+        
+        .value {
+            color: #f1c40f;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+        }
+        
+        footer {
+            background: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">DevEnv</div>
+                <ul class="nav-links">
+                    <li><a href="#tools">开发工具</a></li>
+                    <li><a href="#setup">环境搭建</a></li>
+                    <li><a href="#code">代码示例</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>本地网页开发环境</h1>
+            <p>学习如何设置高效的本地开发环境，提升你的网页开发工作流程</p>
+        </div>
+    </section>
+
+    <section id="tools" class="section">
+        <div class="container">
+            <h2 class="section-title">开发工具推荐</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h3>代码编辑器</h3>
+                    <p>VS Code - 轻量级且功能强大的源代码编辑器</p>
+                </div>
+                <div class="tool-card">
+                    <h3>版本控制</h3>
+                    <p>Git - 分布式版本控制系统，帮助团队协作</p>
+                </div>
+                <div class="tool-card">
+                    <h3>本地服务器</h3>
+                    <p>Live Server - 具有实时重载功能的开发服务器</p>
+                </div>
+                <div class="tool-card">
+                    <h3>浏览器工具</h3>
+                    <p>Chrome DevTools - 网页调试和优化工具</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="setup" class="section">
+        <div class="container">
+            <h2 class="section-title">环境搭建步骤</h2>
+            <ol>
+                <li>安装代码编辑器（如VS Code）</li>
+                <li>安装Git并配置版本控制</li>
+                <li>使用Node.js和npm安装所需依赖</li>
+                <li>设置本地开发服务器</li>
+                <li>配置浏览器开发者工具</li>
+            </ol>
+            <button id="toggleTips" class="btn" style="margin-top: 20px;">显示额外提示</button>
+            <div id="extraTips" style="display: none; margin-top: 20px;">
+                <h3>额外提示：</h3>
+                <p>使用VS Code的Live Server扩展可以快速启动本地开发服务器，并实现实时重载功能。</p>
+                <p>安装ESLint和Prettier插件可以帮助保持代码风格一致和避免错误。</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="code" class="section">
+        <div class="container">
+            <h2 class="section-title">HTML/CSS/JS 示例</h2>
+            <div class="code-editor">
+                <pre><code><span class="comment">&lt;!-- HTML示例 --&gt;</span>
+&lt;div class="container"&gt;
+    &lt;h1&gt;欢迎来到我的网站&lt;/h1&gt;
+    &lt;p&gt;这是一个段落文本&lt;/p&gt;
+    &lt;button id="myButton"&gt;点击我&lt;/button&gt;
+&lt;/div&gt;
+
+<span class="comment">&lt;!-- CSS示例 --&gt;</span>
+<span class="selector">.container</span> {
+    <span class="property">max-width</span>: <span class="value">1200px</span>;
+    <span class="property">margin</span>: <span class="value">0 auto</span>;
+    <span class="property">padding</span>: <span class="value">20px</span>;
+}
+
+<span class="comment">/* JavaScript示例 */</span>
+<span class="selector">document</span>.<span class="property">getElementById</span>(<span class="value">'myButton'</span>).<span class="property">addEventListener</span>(<span class="value">'click'</span>, () => {
+    <span class="selector">alert</span>(<span class="value">'按钮被点击了！'</span>);
+});</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 本地开发环境指南 | 设计用于学习目的</p>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的JavaScript交互功能
+        document.getElementById('toggleTips').addEventListener('click', function() {
+            const extraTips = document.getElementById('extraTips');
+            if (extraTips.style.display === 'none') {
+                extraTips.style.display = 'block';
+                this.textContent = '隐藏额外提示';
+            } else {
+                extraTips.style.display = 'none';
+                this.textContent = '显示额外提示';
+            }
+        });
+    </script>
+</body>
+</html>
